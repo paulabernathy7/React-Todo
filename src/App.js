@@ -26,6 +26,19 @@ import TodoList from './components/TodoComponents/TodoList'
       };
     }
 
+    toggleComplete = itemId => {
+      const todosCopy = this.state.todos.slice()
+      for (let i = 0; i < todosCopy.length; i++ ) {
+        if (todosCopy[i].id === itemId) {
+          todosCopy[i].completed = !todosCopy[i].completed
+        }
+      }
+      this.setState({
+        todos: todosCopy 
+          
+    })
+  }
+
     changeHandler = event => {
       // console.log(event.target.value)
       this.setState({
@@ -53,7 +66,7 @@ import TodoList from './components/TodoComponents/TodoList'
         <TodoForm 
         firstHandler={this.changeHandler}
         taskHandler={this.addTask}/>
-        <TodoList todoArray={this.state.todos}/>
+        <TodoList todoArray={this.state.todos} toggleHandle={this.toggleComplete}/>
 
       </div>
     );
