@@ -46,7 +46,7 @@ import TodoList from './components/TodoComponents/TodoList'
         // console.log("from changeHandler", this.state.task)
     }
     
-    addTask = event => {
+    addTask = () => {
       let newTask = {
         task: this.state.task,
         id: Date.now(),
@@ -58,6 +58,18 @@ import TodoList from './components/TodoComponents/TodoList'
       })
       // console.log(this.state.todos)
     } 
+
+    removeTask = id => {
+       {/* filtering through this.state.todos and returning another array without completed tasks.. the result is the new state. reason why we're doing this.setState  */}
+       const notCompleted = this.state.todos.filter(function (task){
+         return task.completed !== true
+       })
+       this.setState({
+         todos: notCompleted
+       })
+      
+
+    }
 
 
   render() {
