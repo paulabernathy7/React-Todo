@@ -12,15 +12,32 @@ import TodoList from './components/TodoComponents/TodoList'
       this.state = {
         todos: [
           {
-            task: 'Organize Garage',
+            task: 'Learn Full Stack',
             id: 1528817077286,
             completed: false
           },
           {
-            task: 'Bake Cookies',
+            task: 'Learn CS',
             id: 1528817084358,
             completed: false
+          },
+          {
+            task: 'Learn Design',
+            id: 1528817084359,
+            completed: false
+          },
+          {
+            task: 'Learn Product management',
+            id: 1528817084360,
+            completed: false
+          },
+          {
+            task: 'Learn something new',
+            id: 1528817084361,
+            completed: false
           }
+        
+          
         ],
         task: ''
       };
@@ -74,10 +91,11 @@ import TodoList from './components/TodoComponents/TodoList'
 
   render() {
     return (
-      <div>
+      <div className="todoForm">
         <TodoForm 
         firstHandler={this.changeHandler}
-        taskHandler={this.addTask}/>
+        taskHandler={this.addTask}
+        clearHandler={this.removeTask}/>
         <TodoList todoArray={this.state.todos} toggleHandle={this.toggleComplete}/>
 
       </div>

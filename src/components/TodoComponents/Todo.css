@@ -1,3 +1,35 @@
 .completed {
     text-decoration: line-through;
 }
+
+.form {
+    font-size: 20px;
+    text-align: center;
+}
+
+.todo {
+    text-align: left;
+    color: #f8f9fa;
+    font-size: 20px;
+    
+}
+
+.todoForm {
+    background-color: #dc3545;
+    text-align: center;
+    width: 70%;
+    border: 50%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    
+}
+
+.button {
+    font-size: 20px;
+    background-color: #17a2b8 ;
+    color: #FFF;
+}
